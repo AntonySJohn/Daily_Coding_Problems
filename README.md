@@ -1,4 +1,4 @@
-# Daily_Coding_Problems
+# Daily Coding Problems
 
 My C++ solutions for the coding-interview-questions provided by [Daily Coding Problem](https://www.dailycodingproblem.com/ "Link to their Site")
 
