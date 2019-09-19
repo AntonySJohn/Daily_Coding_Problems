@@ -6,7 +6,7 @@ numberrs from the list add up to k.
 For example, given [10, 15, 3, 7] and k = 17, return true,
 since 10 + 7 = 17.
 
-Bonus: Caan you do this in one pass?
+Bonus: Can you do this in one pass?
 */
 
 #include <iostream>
