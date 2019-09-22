@@ -62,7 +62,7 @@ int largestSum(const std::vector<int>& list){
 
 int main(){
     // while testing the problems given example, i noticed that i 
-    // accidently missunderstood the question and calculated the 
+    // accidently misunderstood the question and calculated the 
     // largest possible sum made of just two numbers
     assert(largestSumAlt({2, 4, 6, 2, 5}) == 11);
     assert(largestSumAlt({5, 1, 1, 5}) == 10);
