@@ -62,14 +62,13 @@ std::vector<int> multiply(const std::vector<int>& oldArray){
     return temp;
 }
 
-// only works properly if there are no duplicates in the vector
 void printVectorAsArray(const std::vector<int>& vec){
     for (const auto& entry : vec){
-        if (entry == vec.back()) {
+        if (&entry == &vec.back()) {
             std::cout << entry << "]" << std::endl;
             break;
         }
-        if (entry == vec.front()) {
+        if (&entry == &vec.front()) {
             std::cout << "[";
         }
         std::cout << entry << ", ";
