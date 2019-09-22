@@ -4,7 +4,8 @@ Implement a job scheduler which takes in a function f
 and an integer n, and calls f after n milliseconds.
 */
 
-#include <functional>
+//NOTE: For getting this code to work, you will have to link against pthread
+
 #include <iostream>
 #include <thread>
 #include <chrono>
@@ -15,21 +16,34 @@ auto printElapsedTime(std::chrono::time_point<std::chrono::high_resolution_clock
     std::cout << "Time elapsed since scheduler-call: " << tElapsed.count() << std::endl;
 }
 
+auto anotherFunction() -> void{
+    std::cout << "Another thread printed me!" << std::endl;
+}
+
 template <typename f>
 auto schedule(int sleeptime, f callback) -> void {
-
-    std::thread t1([=](int sleeptime, f callback){
+    std::thread ([sleeptime, callback](){
+        callback();
+    }).detach();
+}
+template<>
+auto schedule(int sleeptime, void (*printElapsedTime)(std::chrono::time_point<std::chrono::high_resolution_clock>)) -> void {
+    std::thread ([sleeptime, printElapsedTime](){
         std::chrono::milliseconds sleepDuration(sleeptime);
         auto startTime = std::chrono::high_resolution_clock::now();
         std::this_thread::sleep_for(sleepDuration);
-        callback(startTime);
-    });
-    t1.detach();
+        printElapsedTime(startTime);
+    }).detach();
 }
 
 int main(){
-    schedule(3000, printElapsedTime);
-    std::chrono::milliseconds sleepDuration(5000);
+    //note that the scheduled thread can outlive the main-tread
+    //main thread should live longer then the schedduled thread
+    schedule(500, printElapsedTime);
+    schedule(300, anotherFunction);
+
+    //helper function to keep the main tread alive for a bit
+    std::chrono::milliseconds sleepDuration(2000);
     std::this_thread::sleep_for(sleepDuration);
     return 0;
 }
