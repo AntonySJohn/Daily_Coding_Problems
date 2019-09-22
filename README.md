@@ -120,3 +120,9 @@ For example, ```[2, 4, 6, 2, 5]``` should return ```13```, since we pick ```2, 6
 * [x] Follow-up: Can you do this in ```O(n)``` time and constant space?
 
 ---
+
+**[Coding Problem #9 - [medium]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Daily_Coding_Problem_010.cpp "Asked by Apple - [medium]")**\
+This problem was asked by _Apple_.\
+Implement a job scheduler which takes in a function ```f``` and an integer ```n```, and calls ```f``` after ```n``` milliseconds.
+
+---
