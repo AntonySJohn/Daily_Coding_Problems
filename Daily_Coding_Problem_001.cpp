@@ -21,11 +21,11 @@ int main(){
 
     std::cout << targetSum << " is sum of two entrys in the list: ";
     for (const auto& entry : example){
-        if (entry == example.back()) {
+        if (&entry == &example.back()) {
             std::cout << entry << "]?" << std::endl;
             break;
         }
-        if (entry == example.front()) {
+        if (&entry == &example.front()) {
             std::cout << "[";
         }
         std::cout << entry << ", ";
