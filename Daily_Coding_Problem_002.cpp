@@ -17,7 +17,7 @@ Follow-up: what if you can't use division?
 
 //O(n) = n^2 -> already no division used
 auto multiply(const std::vector<int>& ) -> std::vector<int>;
-auto printVectorAsArray(const std::vector<int>&) -> void;
+auto operator<<(std::ostream&, const std::vector<int>&) -> std::ostream&;
 
 int main(){
     std::vector<int> example = {1, 2, 3, 4, 5};
@@ -26,17 +26,11 @@ int main(){
     auto modifiedExample(multiply(example));
     auto modifiedExample1(multiply(example1));
 
-    std::cout << "base array : ";
-    printVectorAsArray(example);
-    std::cout << "modified   : ";
-    printVectorAsArray(modifiedExample);
-
+    std::cout << "base array : " << example << std::endl;
+    std::cout << "modified   : " << modifiedExample << std::endl;
     std::cout << "----------------------------------" << std::endl;
-
-    std::cout << "base array : ";
-    printVectorAsArray(example1);
-    std::cout << "modified   : ";
-    printVectorAsArray(modifiedExample1);
+    std::cout << "base array : " << example1 << std::endl;
+    std::cout << "modified   : " << modifiedExample1 << std::endl;
 
     return 0;
 }
@@ -62,15 +56,15 @@ std::vector<int> multiply(const std::vector<int>& oldArray){
     return temp;
 }
 
-void printVectorAsArray(const std::vector<int>& vec){
+std::ostream& operator<<(std::ostream& os, const std::vector<int>& vec){
     for (const auto& entry : vec){
         if (&entry == &vec.back()) {
-            std::cout << entry << "]" << std::endl;
+            os << entry << "]";
             break;
         }
         if (&entry == &vec.front()) {
-            std::cout << "[";
+            os << "[";
         }
-        std::cout << entry << ", ";
+        os << entry << ", ";
     }
 }

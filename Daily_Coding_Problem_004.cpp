@@ -11,19 +11,17 @@ The input [1, 2, 0] should give 3.
 You can modify the input array in-place.
 */
 
-#include <cstddef>
-#include <vector>
 #include <iostream>
+#include <cstddef>
+#include <cassert>
+#include <vector>
 
 auto findLowestPositiveMissingInt(const std::vector<int>&) -> int;
 
 int main(){
-    std::vector<int> example = {3, 4, -1, 1};
-    std::vector<int> example1 = {1, 2, 0};
-    std::vector<int> example2 = {1, 2, 12, 39, 4, 8, 3, 7};
-    std::cout << findLowestPositiveMissingInt(example) << std::endl;
-    std::cout << findLowestPositiveMissingInt(example1) << std::endl;
-    std::cout << findLowestPositiveMissingInt(example2) << std::endl;
+    assert(findLowestPositiveMissingInt({3, 4, -1, 1}) == 2);
+    assert(findLowestPositiveMissingInt({1, 2, 0}) == 3);
+    assert(findLowestPositiveMissingInt({1, 2, 12, 39, 4, 8, 3, 7}) == 5);
     return 0;
 }
 

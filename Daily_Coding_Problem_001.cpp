@@ -14,22 +14,14 @@ Bonus: Can you do this in one pass?
 
 // O(n) = n^2
 auto isSum(const std::vector<int>&, const int&) -> bool;
+auto operator<<(std::ostream&, const std::vector<int>&) -> std::ostream&;
 
 int main(){
     const std::vector<int> example = {10, 15, 3, 7};
     int targetSum(17);
 
-    std::cout << targetSum << " is sum of two entrys in the list: ";
-    for (const auto& entry : example){
-        if (&entry == &example.back()) {
-            std::cout << entry << "]?" << std::endl;
-            break;
-        }
-        if (&entry == &example.front()) {
-            std::cout << "[";
-        }
-        std::cout << entry << ", ";
-    }
+    std::cout << targetSum << " is sum of two entrys in the list: " << example << " -> ";
+
     std::cout.setf(std::ios_base::boolalpha);
     std::cout << isSum(example, targetSum) << std::endl;
     return 0;
@@ -37,10 +29,7 @@ int main(){
 
 bool isSum(const std::vector<int>& list, const int& targetSum){
     // vector to store complements of list-entrys
-    std::vector<int> complements;
-
-    // allocate memory for worst-case (prevents vector from multiple resizing)
-    complements.reserve(list.size() - 1);
+    std::vector<int> complements(list.size());
 
     for (auto& listEntry : list){
         for  (auto& complementEntry : complements){
@@ -52,4 +41,17 @@ bool isSum(const std::vector<int>& list, const int& targetSum){
     }
     
     return false;
+}
+
+std::ostream& operator<<(std::ostream& os, const std::vector<int>& vec){
+    for (const auto& entry : vec){
+        if (&entry == &vec.back()) {
+            os << entry << "]";
+            break;
+        }
+        if (&entry == &vec.front()) {
+            os << "[";
+        }
+        os << entry << ", ";
+    }
 }
