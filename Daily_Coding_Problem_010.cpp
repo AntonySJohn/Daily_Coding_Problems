@@ -23,6 +23,8 @@ auto anotherFunction() -> void{
 template <typename f>
 auto schedule(int sleeptime, f callback) -> void {
     std::thread ([sleeptime, callback](){
+        std::chrono::milliseconds sleepDuration(sleeptime);
+        std::this_thread::sleep_for(sleepDuration);
         callback();
     }).detach();
 }
