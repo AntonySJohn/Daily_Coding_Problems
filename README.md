@@ -149,7 +149,15 @@ For example, if ```N``` is ```4```, then there are ```5``` unique ways:
 >1, 1, 2\
 >2, 2
 
-* [ ] What if, instead of being able to climb ```1 or 2``` steps at a time, you could climb any number from a set of positive integers ```X```?\
+* [x] What if, instead of being able to climb ```1 or 2``` steps at a time, you could climb any number from a set of positive integers ```X```?\
 For example, if ```X = {1, 3, 5}```, you could climb ```1, 3, or 5``` steps at a time.
+
+---
+
+**[Coding Problem #13 - [hard]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Daily_Coding_Problem_013.cpp "Asked by Amazon - [hard]")**\
+This problem was asked by _Amazon_.\
+Given an integer ```k``` and a string ```s```, find the length of the longest substring that contains at most ```k``` distinct characters.
+
+For example, given ```s = "abcba"``` and ```k = 2```, the longest substring with ```k``` distinct characters is ```"bcb"```.
 
 ---
