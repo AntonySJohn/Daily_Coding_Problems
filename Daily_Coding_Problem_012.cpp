@@ -21,14 +21,15 @@ steps at a time.
 
 #include <iostream>
 #include <cassert>
+#include <memory>
 #include <vector>
 
 int uniqueWays(int N, const std::vector<int>& X = {1, 2}){
     if (N == 1 ) return 1;
 
-    auto calculated(new int[N+1]);
+    auto calculated = std::make_unique<int[]>(N+1);
     calculated[0] = 1;
-    
+
     for (int i = 1; i <= N; i++){
         int temp = 0;
         for (auto& stepSize : X){
