@@ -19,7 +19,6 @@ For example, if X = {1, 3, 5}, you could climb 1, 3, or 5
 steps at a time.
 */
 
-#include <iostream>
 #include <cassert>
 #include <memory>
 #include <vector>
