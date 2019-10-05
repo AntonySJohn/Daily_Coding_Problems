@@ -161,3 +161,11 @@ Given an integer ```k``` and a string ```s```, find the length of the longest su
 For example, given ```s = "abcba"``` and ```k = 2```, the longest substring with ```k``` distinct characters is ```"bcb"```.
 
 ---
+
+**[Coding Problem #14 - [medium]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Daily_Coding_Problem_014.cpp "Asked by Google - [medium]")**\
+This problem was asked by _Google_.\
+The area of a circle is defined as ```πr²```. Estimate ```π``` to 3 decimal places using a Monte Carlo method.
+
+>Hint: The basic equation of a circle is ```x² + y² = r²```.
+
+---
