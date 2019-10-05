@@ -169,3 +169,9 @@ The area of a circle is defined as ```πr²```. Estimate ```π``` to 3 decimal p
 >Hint: The basic equation of a circle is ```x² + y² = r²```.
 
 ---
+
+**[Coding Problem #15 - [medium]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Daily_Coding_Problem_015.cpp "Asked by Facebook - [medium]")**\
+This problem was asked by _Facebook_.\
+Given a stream of elements too large to store in memory, pick a random element from the stream with uniform probability.
+
+---
