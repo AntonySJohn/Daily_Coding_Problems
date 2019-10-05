@@ -16,7 +16,7 @@ The following test should pass:
     assert deserialize(serialize(node)).left.left.val == 'left.left'
 */
 
-#include "include/binaryTree.hpp"
+#include "../include/binaryTree.hpp"
 #include <cassert>
 #include <string>
 #include <memory>

@@ -16,7 +16,7 @@ For example, the following root has 5 unival subtrees:
         1   1
 */
 
-#include "include/binaryTree.hpp"
+#include "../include/binaryTree.hpp"
 #include <memory>
 #include <cassert>
 
