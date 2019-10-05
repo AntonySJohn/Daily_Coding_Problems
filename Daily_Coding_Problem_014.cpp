@@ -7,5 +7,6 @@ Hint: The basic equation of a circle is x² + y² = r².
 */
 
 int main(){
+    double pi;
     return 0;
 }
