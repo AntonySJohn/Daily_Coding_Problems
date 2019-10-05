@@ -6,7 +6,7 @@ Coding Problems Ordered by numbers:
 
 ---
 
-**[Coding Problem #1 - [easy]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Daily_Coding_Problem_001.cpp "Asked by Google - [easy]")**\
+**[Coding Problem #1 - [easy]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Problems_0-100/Daily_Coding_Problem_001.cpp "Asked by Google - [easy]")**\
 This Problem wasy recently asked by _Google_.\
 Given a list of numbers and a number k, return wheather any two numberrs from the list add up to ```k```.
 
@@ -16,7 +16,7 @@ For example, given ```[10, 15, 3, 7]``` and ```k = 17```, return true, since ```
 
 ---
 
-**[Coding Problem #2 - [hard]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Daily_Coding_Problem_002.cpp "Asked by Uber - [hard]")**\
+**[Coding Problem #2 - [hard]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Problems_0-100/Daily_Coding_Problem_002.cpp "Asked by Uber - [hard]")**\
 This problem was asked by _Uber_.\
 Given an array of integers, return a new array such that each element at index ```i``` of the new array is the product of all the numbers in the original array except the one at ```i```.
 
@@ -26,7 +26,7 @@ For example, if our input was ```[1, 2, 3, 4, 5]```, the expected output would b
 
 ---
 
-**[Coding Problem #3 - [medium]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Daily_Coding_Problem_003.cpp "Asked by Google - [medium]")**\
+**[Coding Problem #3 - [medium]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Problems_0-100/Daily_Coding_Problem_003.cpp "Asked by Google - [medium]")**\
 This problem was asked by _Google_.\
 Given the root to a binary tree, implement ```serialize(root)```, which serializes the tree into a string, and ```deserialize(s)```, which deserializes the string back into the tree.
 
@@ -49,7 +49,7 @@ assert deserialize(serialize(node)).left.left.val == 'left.left'
 
 ---
 
-**[Coding Problem #4 - [hard]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Daily_Coding_Problem_004.cpp "Asked by Stripe - [hard]")**\
+**[Coding Problem #4 - [hard]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Problems_0-100/Daily_Coding_Problem_004.cpp "Asked by Stripe - [hard]")**\
 This problem was asked by _Stripe_.\
 Given an array of integers, find the first missing positive integer in linear time and constant space. In other words, find the lowest positive integer that does not exist in the array. The array can contain duplicates and negative numbers as well.
 
@@ -58,7 +58,7 @@ You can modify the input array in-place.
 
 ---
 
-**[Coding Problem #5 - [medium]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Daily_Coding_Problem_005.cpp "Asked by Jane Street - [medium]")**\
+**[Coding Problem #5 - [medium]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Problems_0-100/Daily_Coding_Problem_005.cpp "Asked by Jane Street - [medium]")**\
 This problem was asked by _Jane Street_.\
  ```cons(a, b)``` constructs a pair and ```car(pair)``` and ```cdr(pair)``` returns the first and last element of that pair. For example, ```car(cons(3, 4))``` returns ```3```, and ```cdr(cons(3, 4))``` returns ```4```.
 
@@ -75,7 +75,7 @@ Implement ```car``` and ```cdr```.
 
 ---
 
-**[Coding Problem #6 - [hard]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Daily_Coding_Problem_006.cpp "Asked by Google - [hard]")**\
+**[Coding Problem #6 - [hard]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Problems_0-100/Daily_Coding_Problem_006.cpp "Asked by Google - [hard]")**\
 This problem was asked by _Google_.\
 An XOR linked list is a more memory efficient doubly linked list. Instead of each node holding nextElement and prevElement fields, it holds a field named both, which is an XOR of the nextElement node and the previous node. Implement an XOR linked list; it has an ```add(node)``` which adds the node to the end, and a ```get(index)``` which returns the node at ```index```.
 
@@ -83,7 +83,7 @@ If using a language that has no pointers (such as Python), you can assume you ha
 
 ---
 
-**[Coding Problem #7 - [medium]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Daily_Coding_Problem_007.cpp "Asked by Facebook - [medium]")**\
+**[Coding Problem #7 - [medium]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Problems_0-100/Daily_Coding_Problem_007.cpp "Asked by Facebook - [medium]")**\
 This problem was asked by _Facebook_.\
 Given the mapping ```a = 1, b = 2, ... z = 26```, and an encoded message, count the number of ways it can be decoded.
 
@@ -93,7 +93,7 @@ You can assume that the messages are decodable. For example, ```'001'``` is not 
 
 ---
 
-**[Coding Problem #8 - [easy]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Daily_Coding_Problem_008.cpp "Asked by Google - [easy]")**\
+**[Coding Problem #8 - [easy]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Problems_0-100/Daily_Coding_Problem_008.cpp "Asked by Google - [easy]")**\
 This problem was asked by _Google_.\
 A unival root (which stands for "universal value") is a root where all nodes under it have the same value. Given the root to a binary root, count the number of unival subtrees.
 
@@ -111,7 +111,7 @@ For example, the following root has ```5``` unival subtrees:
 
 ---
 
-**[Coding Problem #9 - [hard]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Daily_Coding_Problem_009.cpp "Asked by Airbnb - [hard]")**\
+**[Coding Problem #9 - [hard]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Problems_0-100/Daily_Coding_Problem_009.cpp "Asked by Airbnb - [hard]")**\
 This problem was asked by _Airbnb_.\
 Given a list of integers, write a function that returns the largest sum of non-adjacent numbers. Numbers can be 0 or negative.
 
@@ -121,13 +121,13 @@ For example, ```[2, 4, 6, 2, 5]``` should return ```13```, since we pick ```2, 6
 
 ---
 
-**[Coding Problem #10 - [medium]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Daily_Coding_Problem_010.cpp "Asked by Apple - [medium]")**\
+**[Coding Problem #10 - [medium]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Problems_0-100/Daily_Coding_Problem_010.cpp "Asked by Apple - [medium]")**\
 This problem was asked by _Apple_.\
 Implement a job scheduler which takes in a function ```f``` and an integer ```n```, and calls ```f``` after ```n``` milliseconds.
 
 ---
 
-**[Coding Problem #11 - [medium]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Daily_Coding_Problem_011.cpp "Asked by Twitter - [medium]")**\
+**[Coding Problem #11 - [medium]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Problems_0-100/Daily_Coding_Problem_011.cpp "Asked by Twitter - [medium]")**\
 This problem was asked by _Twitter_.\
 Implement an autocomplete system. That is, given a query string ```s``` and a set of all possible query strings, return all strings in the set that have s as a prefix.
 
@@ -137,7 +137,7 @@ Hint: Try preprocessing the dictionary into a more efficient data structure to s
 
 ---
 
-**[Coding Problem #12 - [hard]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Daily_Coding_Problem_012.cpp "Asked by Amazon - [hard]")**\
+**[Coding Problem #12 - [hard]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Problems_0-100/Daily_Coding_Problem_012.cpp "Asked by Amazon - [hard]")**\
 This problem was asked by _Amazon_.\
 There exists a staircase with ```N``` steps, and you can climb up either ```1 or 2``` steps at a time. Given ```N```, write a function that returns the number of unique ways you can climb the staircase. The order of the steps matters.
 
@@ -154,7 +154,7 @@ For example, if ```X = {1, 3, 5}```, you could climb ```1, 3, or 5``` steps at a
 
 ---
 
-**[Coding Problem #13 - [hard]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Daily_Coding_Problem_013.cpp "Asked by Amazon - [hard]")**\
+**[Coding Problem #13 - [hard]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Problems_0-100/Daily_Coding_Problem_013.cpp "Asked by Amazon - [hard]")**\
 This problem was asked by _Amazon_.\
 Given an integer ```k``` and a string ```s```, find the length of the longest substring that contains at most ```k``` distinct characters.
 
@@ -162,7 +162,7 @@ For example, given ```s = "abcba"``` and ```k = 2```, the longest substring with
 
 ---
 
-**[Coding Problem #14 - [medium]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Daily_Coding_Problem_014.cpp "Asked by Google - [medium]")**\
+**[Coding Problem #14 - [medium]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Problems_0-100/Daily_Coding_Problem_014.cpp "Asked by Google - [medium]")**\
 This problem was asked by _Google_.\
 The area of a circle is defined as ```πr²```. Estimate ```π``` to 3 decimal places using a Monte Carlo method.
 
@@ -170,13 +170,13 @@ The area of a circle is defined as ```πr²```. Estimate ```π``` to 3 decimal p
 
 ---
 
-**[Coding Problem #15 - [medium]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Daily_Coding_Problem_015.cpp "Asked by Facebook - [medium]")**\
+**[Coding Problem #15 - [medium]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Problems_0-100/Daily_Coding_Problem_015.cpp "Asked by Facebook - [medium]")**\
 This problem was asked by _Facebook_.\
 Given a stream of elements too large to store in memory, pick a random element from the stream with uniform probability.
 
 ---
 
-**[Coding Problem #16 - [easy]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Daily_Coding_Problem_016.cpp "Asked by Twitter - [easy]")**\
+**[Coding Problem #16 - [easy]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Problems_0-100/Daily_Coding_Problem_016.cpp "Asked by Twitter - [easy]")**\
 This problem was asked by _Twitter_.\
 You run an e-commerce website and want to record the last ```N``` order ids in a log. Implement a data structure to accomplish this, with the following API:
 
