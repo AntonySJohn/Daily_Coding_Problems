@@ -175,3 +175,14 @@ This problem was asked by _Facebook_.\
 Given a stream of elements too large to store in memory, pick a random element from the stream with uniform probability.
 
 ---
+
+**[Coding Problem #16 - [easy]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Daily_Coding_Problem_016.cpp "Asked by Twitter - [easy]")**\
+This problem was asked by _Twitter_.\
+You run an e-commerce website and want to record the last ```N``` order ids in a log. Implement a data structure to accomplish this, with the following API:
+
+1. ```record(order_id)```: adds the order_id to the log
+1. ```get_last(i)```: gets the ith last element from the log. ```i``` is guaranteed to be smaller than or equal to ```N```.
+
+* [x] You should be as efficient with time and space as possible.
+
+---
