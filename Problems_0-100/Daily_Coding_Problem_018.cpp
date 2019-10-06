@@ -17,6 +17,34 @@ in-place and you do not need to store the results.
 You can simply print them out as you compute them.
 */
 
+#include <algorithm>
+#include <iostream>
+#include <cstddef>
+#include <vector>
+#include <deque>
+
+auto maxOfSubarrays(const std::vector<int>& values, int k){
+    std::vector<int> returnVec;
+    std::deque<int> dq(k);
+    for (std::size_t i = 0; i < k; i++){
+        while (!dq.empty() && values.at(i) >= values.at(dq.back()))
+            dq.pop_back(); 
+        dq.push_back(i); 
+    }
+    for (std::size_t i = k; i < values.size(); i++){
+        std::cout << values.at(dq.front()) << ' ';
+        while (!dq.empty() && dq.front() <= i - k)
+            dq.pop_front();
+        while (!dq.empty() && values.at(i) >= values.at(dq.back()))
+            dq.pop_back();
+        dq.push_back(i);
+    }
+    std::cout << values.at(dq.front());
+}
+
 int main(){
+    std::vector<int> example{10, 5, 2, 7, 8, 7};
+    int k = 3;
+    maxOfSubarrays(example, k);
     return 0;
 }
