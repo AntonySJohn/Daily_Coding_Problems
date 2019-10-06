@@ -10,8 +10,7 @@ Hint: The basic equation of a circle is x² + y² = r².
 #include <random>
 
 double getPi(){
-    double testPoints(10'000'000), inside(0), x(0), y(0);
-
+    double testPoints(10'000'000), inside(0);
     std::random_device seed;
     std::mt19937 randomNumber(seed());
     std::uniform_real_distribution<> uni(-0.5, 0.5);
@@ -21,14 +20,12 @@ double getPi(){
     };
 
     for (int i = 0; i < testPoints; i++){
-        x = uni(randomNumber);
-        y = uni(randomNumber);
-        if (circleTest(x,y)) inside++;
+        if (circleTest(uni(randomNumber), uni(randomNumber))) inside++;
     }
 
     return (4 * inside) / testPoints;
 }
 
 int main(){
-    assert(fabs(getPi() - 3.141f) <= 0.001f);
+    assert(fabs(getPi() - 3.141f) < 0.001f);
 }
