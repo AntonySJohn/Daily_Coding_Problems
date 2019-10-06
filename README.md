@@ -238,6 +238,13 @@ For example, given ```array = [10, 5, 2, 7, 8, 7]``` and ```k = 3```, we should 
 * ```8 = max(2, 7, 8)```
 * ```8 = max(7, 8, 7)```
 
-1. [ ] Do this in ```O(n)``` time and ```O(k)``` space. You can modify the input array in-place and you do not need to store the results. You can simply print them out as you compute them.
+1. [x] Do this in ```O(n)``` time and ```O(k)``` space. You can modify the input array in-place and you do not need to store the results. You can simply print them out as you compute them.
+
+---
+
+**[Coding Problem #19 - [medium]](https://github.com/BlueQuote/Daily_Coding_Problems/blob/master/Problems_0-100/Daily_Coding_Problem_019.cpp "Asked by Facebook - [medium]")**\
+This problem was asked by _Facebook_.\
+A builder is looking to build a row of ```N``` houses that can be of ```K``` different colors. He has a goal of minimizing cost while ensuring that no two neighboring houses are of the same color.
+Given an ```N``` by ```K``` matrix where the ```n-th``` row and ```k-th``` column represents the cost to build the nth house with kth color, return the minimum cost which achieves this goal.
 
 ---
