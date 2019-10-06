@@ -9,7 +9,7 @@ pick a random element from the stream with uniform probability.
 #include <random>
 #include <vector>
 
-int reservoirSampling(const std::vector<int> &stream){
+int reservoirSampling(const std::vector<int>& stream){
     int index(1), currentSample = 0;
     std::for_each(stream.begin(), stream.end(),
                   [&index, &currentSample](const auto &element) {
