@@ -39,6 +39,78 @@ The name of a file contains at least a period and an extension.
 The name of a directory or sub-directory will not contain a period.
 */
 
+#include <algorithm>
+#include <iostream>
+#include <cassert>
+#include <sstream>
+#include <string>
+#include <vector>
+
+class directoryTree{
+private:
+    int level;
+    bool file;
+    std::string dirName;
+    directoryTree* parentDir;
+    std::vector<directoryTree*> subdirectorys;
+public:
+    directoryTree() : level(-1), file(false), dirName("*"), parentDir(nullptr){}
+    directoryTree(int level, const std::string& dirName, bool isFile, directoryTree* parent) :
+        level(level), dirName(dirName), file(isFile), parentDir(parent) {}
+
+    auto parent(){return this->parentDir;}
+    auto add(directoryTree* newSubdir){this->subdirectorys.push_back(newSubdir);}
+    static auto generateTree(const std::string& path){
+        auto split = [](const std::string& str, char delimiter){
+            std::vector<std::string> tokens;
+            std::string token;
+            std::istringstream tokenStream(str);
+            while (std::getline(tokenStream, token, delimiter)) tokens.push_back(token);
+            return tokens;
+        };
+
+        auto tokens = split(path, '\n');
+        auto newTree = new directoryTree();
+        auto returnTree(newTree);
+        directoryTree* nextNode = nullptr;
+        int currentLevel = -1;
+
+        std::for_each(tokens.begin(), tokens.end(), 
+            [&tokens, &newTree, &nextNode, &currentLevel, &split](const auto& token){
+                int tab(0);
+                while (token.at(tab) == '\t') tab++;
+                if (currentLevel >= tab){
+                    int i = currentLevel - tab + 1;
+                    while (i--) newTree = newTree->parent();
+                }
+                if (split(token, '.').size() > 1) 
+                    nextNode = new directoryTree(tab, token.substr(tab), true, newTree);
+                else nextNode = new directoryTree(tab, token.substr(tab), false, newTree);
+                newTree->add(nextNode);
+                currentLevel = tab;
+                newTree = nextNode;
+            }
+        );
+        return returnTree;
+    }
+
+    int longestFilepath() {
+        if (this->file) return this->dirName.size();
+        if (this->subdirectorys.size() == 0) return 0;
+        int maxLength(0);
+        std::for_each(this->subdirectorys.begin(), this->subdirectorys.end(),
+            [&maxLength](const auto& subdir){
+                maxLength = std::max(maxLength, subdir->longestFilepath());
+            }
+        );
+        return this->level < 0 ? maxLength : maxLength + this->dirName.size() + 1;
+    }
+    ~directoryTree(){for (auto& node : this->subdirectorys) delete node; delete this;}
+};
+
 int main(){
-    return 0;
+    std::string example = "dir\n\tsubdir1\n\t\tfile1.ext\n"\
+        "\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext";
+    auto exampleTree = directoryTree::generateTree(example);
+    assert(exampleTree->longestFilepath() == 32);
 }
