@@ -18,7 +18,9 @@ auto longestSubstring(int distinct, const std::string& str){
 
     //find longest substring for every char in the string
     //as begin point of the search
-    for (auto& ch : str){
+    std::for_each(str.begin(), str.end(),
+            [&maxSubsting, &distChars, &distinct](const auto& ch){
+        
         distChars.push_back({ch, 1});
         auto itr = &ch;
 
@@ -28,7 +30,7 @@ auto longestSubstring(int distinct, const std::string& str){
             //when the char is not in the set of already seen chars
             //(if the char is in the seen ones, increment the chars counter)
             if (std::find_if(distChars.begin(), distChars.end(), 
-                [itr](std::pair<char,int>& p) 
+                [&itr](std::pair<char,int>& p) 
                     {   if (p.first == *itr) {
                             p.second++;
                             return true;
@@ -38,7 +40,7 @@ auto longestSubstring(int distinct, const std::string& str){
                 //maximum distinct integers found
                 if (distChars.size() == distinct){
                     int temp = 0;
-                    for (auto& p : distChars) temp += p.second;
+                    for (const auto& p : distChars) temp += p.second;
                     maxSubsting = std::max(maxSubsting, temp);
                     break;
 
@@ -49,8 +51,7 @@ auto longestSubstring(int distinct, const std::string& str){
             }
         }
         distChars.clear();
-    }
-
+    });
     return maxSubsting;
 }
 
