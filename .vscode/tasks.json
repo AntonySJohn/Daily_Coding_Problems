@@ -47,6 +47,7 @@
             "command": "clang-format",
             "args": [
                 "-i",
+                "-style=file",
                 "${file}"
             ],
             "problemMatcher": [],
