@@ -76,7 +76,7 @@ public:
         int currentLevel = -1;
 
         std::for_each(tokens.begin(), tokens.end(), 
-            [&tokens, &newTree, &nextNode, &currentLevel, &split](const auto& token){
+            [&](const auto& token){
                 int tab(0);
                 while (token.at(tab) == '\t') tab++;
                 if (currentLevel >= tab){
