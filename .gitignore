@@ -1,2 +1,2 @@
-**/.clang-format
-**/.vscode
+#all dotfiles
+**.*
