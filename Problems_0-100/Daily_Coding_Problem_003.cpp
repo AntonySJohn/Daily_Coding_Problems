@@ -16,19 +16,18 @@ The following test should pass:
     assert deserialize(serialize(node)).left.left.val == 'left.left'
 */
 
-#include "../include/binaryTree.hpp"
 #include <cassert>
-#include <string>
 #include <memory>
+#include <string>
+#include "../include/binaryTree.hpp"
 
-int main()
-{
+int main() {
     //          "root"                                                            "root"
     //         /     \                                                           /     \ 
     //    "left"    "right"  -> "root left left.left # # # right # # " ->   "left"    "right"
     //      /                                                                 /
     // "left.left"                                                       "left.left"
-    
+
     using sNode = node<std::string>;
     auto root = std::make_shared<sNode>("root", sNode("left", sNode("left.left")), sNode("right"));
     assert(sNode::deserialize(root->serialize())->getLeft()->getLeft()->getLabel() == "left.left");

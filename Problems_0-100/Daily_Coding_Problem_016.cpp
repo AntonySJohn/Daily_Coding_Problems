@@ -1,12 +1,12 @@
 /*
 This problem was asked by Twitter.
 
-You run an e-commerce website and want to record the 
-last N order ids in a log. Implement a data structure 
+You run an e-commerce website and want to record the
+last N order ids in a log. Implement a data structure
 to accomplish this, with the following API:
 
 record(order_id): adds the order_id to the log
-get_last(i): gets the ith last element from the log. 
+get_last(i): gets the ith last element from the log.
     i is guaranteed to be smaller than or equal to N.
 
 You should be as efficient with time and space as possible.
@@ -16,26 +16,26 @@ You should be as efficient with time and space as possible.
 #include <cassert>
 #include <list>
 
-class log{
+class log {
 private:
     const int n = 5;
     std::list<int> orderIDs;
+
 public:
     log(int size) : n(size) {}
-    auto record(int orderID){
-        if (this->orderIDs.size() >= this->n)
-            this->orderIDs.pop_back();
+    auto record(int orderID) {
+        if (this->orderIDs.size() >= this->n) this->orderIDs.pop_back();
         this->orderIDs.emplace_front(orderID);
     }
-    auto get_last(int i) const{
+    auto get_last(int i) const {
         assert(i > 0);
-	    std::list<int>::const_iterator it = this->orderIDs.begin();
-	    std::advance(it, i-1);
+        std::list<int>::const_iterator it = this->orderIDs.begin();
+        std::advance(it, i - 1);
         return *it;
     }
 };
 
-int main(){
+int main() {
     log example(4);
     example.record(2);
     example.record(4);

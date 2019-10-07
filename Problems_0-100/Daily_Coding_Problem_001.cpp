@@ -1,4 +1,4 @@
-/* 
+/*
 This Problem wasy recently asked by Google.
 Given a list of numbers and a number k, return wheather any two
 numberrs from the list add up to k.
@@ -16,7 +16,7 @@ Bonus: Can you do this in one pass?
 auto isSum(const std::vector<int>&, const int&) -> bool;
 auto operator<<(std::ostream&, const std::vector<int>&) -> std::ostream&;
 
-int main(){
+int main() {
     const std::vector<int> example = {10, 15, 3, 7};
     int targetSum(17);
 
@@ -27,24 +27,24 @@ int main(){
     return 0;
 }
 
-bool isSum(const std::vector<int>& list, const int& targetSum){
+bool isSum(const std::vector<int>& list, const int& targetSum) {
     // vector to store complements of list-entrys
     std::vector<int> complements(list.size());
 
-    for (auto& listEntry : list){
-        for  (auto& complementEntry : complements){
-            if (listEntry == complementEntry){
+    for (auto& listEntry : list) {
+        for (auto& complementEntry : complements) {
+            if (listEntry == complementEntry) {
                 return true;
             }
         }
         complements.push_back(targetSum - listEntry);
     }
-    
+
     return false;
 }
 
-std::ostream& operator<<(std::ostream& os, const std::vector<int>& vec){
-    for (const auto& entry : vec){
+std::ostream& operator<<(std::ostream& os, const std::vector<int>& vec) {
+    for (const auto& entry : vec) {
         if (&entry == &vec.back()) {
             os << entry << "]";
             break;
