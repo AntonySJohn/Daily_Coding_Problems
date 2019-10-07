@@ -48,7 +48,6 @@ auto lowestCost(std::vector<std::vector<int>> costMatrix){
 }
 
 int main(){
-    //  rows        collumns
     int colors = 4, houses = 8, count(1);
     std::vector<std::vector<int>> example(colors, std::vector<int>(houses));
     std::cout << "Given the matrix: (each col is a house, each row a color)\n";
