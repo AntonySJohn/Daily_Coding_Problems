@@ -22,6 +22,34 @@
                 "$gcc"
             ],
             "group": "build"
+        },
+        {
+            "type": "shell",
+            "label": "clang-6.0 build active file",
+            "command": "/usr/bin/clang-6.0",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "/usr/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        },
+        {
+            "type": "shell",
+            "label": "clang-format-6.0 formatting - Style Google",
+            "command": "clang-format",
+            "args": [
+                "-i",
+                "${file}"
+            ],
+            "problemMatcher": []
         }
     ]
 }
