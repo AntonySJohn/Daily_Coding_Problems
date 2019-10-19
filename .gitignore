@@ -1,2 +1,4 @@
 #all dotfiles
 **.*
+#The workspace-file
+DCP_WS.code-workspace
